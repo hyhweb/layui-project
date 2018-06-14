@@ -1,0 +1,175 @@
+<!-- 办单管理 -->
+<div class="layui-tab layui-tab-brief" lay-filter="single">
+  <ul class="layui-tab-title">
+    <li class="layui-this" lay-id="1">船公司申请</li>
+    <li lay-id="2">码头申请</li>
+  </ul>
+  <div class="layui-tab-content">
+    <div class="layui-tab-item layui-show">
+      <!-- 船公司申请 -->
+
+      <form class="layui-form" action="">
+      <div class="layui-form-item">
+        <div class="layui-inline">
+          <label class="layui-form-label">订舱单号：</label>
+          <div class="layui-input-inline">
+            <input type="text" name="bookSpaceNo"  autocomplete="off" class="layui-input">
+          </div>
+        </div>
+
+        <div class="layui-inline">
+          <label class="layui-form-label">业务类型：</label>
+          <div class="layui-input-inline">
+             <select name="orderType"  autocomplete="off"  lay-search>
+               <option value="">请选择</option>
+               <option value="0">出口</option>
+               <option value="1">进口</option>
+              </select>
+          </div>
+        </div>
+
+        
+
+        <div class="layui-inline">
+          <label class="layui-form-label">船公司：</label>
+          <div class="layui-input-inline">
+             <select name="shipCompanyId"  autocomplete="off"  lay-search>
+               <option value="">请选择</option>
+              </select>
+          </div>
+        </div>
+
+        <div class="layui-inline">
+          <label class="layui-form-label">状态：</label>
+          <div class="layui-input-inline">
+              <select name="orderStatus"   lay-search>
+             <option value="">请选择</option>
+             <option value="0">待审核</option>
+             <option value="1">待支付办单费</option>
+             <option value="2">办单完成</option>
+            </select>
+          </div>
+        </div>
+
+        
+
+         <button class="layui-btn layui-inline search" lay-submit="" lay-filter="search" data-type="reload">查询</button>
+          <button type="reset" class="layui-btn layui-btn-primary layui-inline">重置</button>
+      </div>
+      <hr class="layui-bg-gray">
+        <div class="layui-form-item">
+          <div>
+            <span class="layui-btn"  data-handle="1" data-type="openDialog">打印设备交接单</span>
+            <span class="layui-btn"  data-handle="2" data-type="openDialog">打印放箱单</span>
+            <span class="layui-btn"  data-handle="3" data-type="openDialog">码头办单</span>
+          </div>
+        </div>
+     </form>
+      <table class="layui-hide" id="table" lay-filter="table"></table>
+
+
+    </div>
+    <div class="layui-tab-item">
+      
+      <!-- 码头申请 -->
+      <form class="layui-form" action="">
+      <div class="layui-form-item">
+        <div class="layui-inline">
+          <label class="layui-form-label">订舱单号：</label>
+          <div class="layui-input-inline">
+            <input type="text" name="bookSpaceNo"  autocomplete="off" class="layui-input">
+          </div>
+        </div>
+
+        <div class="layui-inline">
+          <label class="layui-form-label">业务类型：</label>
+          <div class="layui-input-inline">
+             <select name="orderType"  autocomplete="off"  lay-search>
+               <option value="">请选择</option>
+               <option value="0">出口</option>
+               <option value="1">进口</option>
+              </select>
+          </div>
+        </div>
+
+        
+
+        <div class="layui-inline">
+          <label class="layui-form-label">船公司：</label>
+          <div class="layui-input-inline">
+             <select name="shipCompanyId"  autocomplete="off"  lay-search>
+               <option value="">请选择</option>
+              </select>
+          </div>
+        </div>
+
+        <div class="layui-inline">
+          <label class="layui-form-label">状态：</label>
+          <div class="layui-input-inline">
+              <select id="orderStatus" name="orderStatus"   lay-search>
+              <option value="">请选择</option>
+            </select>
+          </div>
+        </div>
+
+        
+
+         <button class="layui-btn layui-inline dockersearch" lay-submit="" lay-filter="dockersearch" data-type="reload">查询</button>
+          <button type="reset" class="layui-btn layui-btn-primary layui-inline">重置</button>
+      </div>
+      <hr class="layui-bg-gray">
+        <div class="layui-form-item">
+          <div>
+            <span class="layui-btn"  data-handle="4" data-type="openDialog">延期申请</span>
+          </div>
+        </div>
+     </form>
+      <table class="layui-hide" id="dockertable" lay-filter="dockertable"></table>
+
+
+    </div>
+  </div>
+</div>
+<script type="text/html" id="statusList">
+<div style="text-align:center">
+  
+  {{# if(d.orderStatus==1){ }}
+  <span class=" c1" >{{d.orderStatusName}}</span>
+  {{# }else{ }}
+  <span class="">{{d.orderStatusName}}</span>
+  {{# } }}
+</div>
+  
+</script>
+
+<script type="text/html" id="bar1">
+<div style="text-align:center">
+  <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+  {{# if(d.orderStatus==1){ }}
+  <a class="layui-btn layui-btn-xs" lay-event="payment">支付</a>
+  {{# }else{ }}
+  <a class="layui-btn layui-btn-xs" style="visibility: hidden;">支付</a>
+  {{# } }}
+</div>
+  
+</script>
+
+<script type="text/html" id="dockerbar2">
+<div style="text-align:center">
+  <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+  {{# if(d.orderStatus==1){ }}
+  <a class="layui-btn layui-btn-xs" lay-event="payment">支付</a>
+ {{# }else if(d.orderStatus==4){ }}
+ <a class="layui-btn layui-btn-xs" lay-event="delaypayment">支付</a>
+  {{# }else if(d.orderStatus==6){ }}
+ <a class="layui-btn layui-btn-xs" lay-event="delaypayment">支付</a>
+  {{# }else{ }}
+  <a class="layui-btn layui-btn-xs" style="visibility: hidden;">支付</a>
+  {{# } }}
+</div>
+  
+</script>
+
+    
+
+<script src="../singleAdmin/index.js"></script>

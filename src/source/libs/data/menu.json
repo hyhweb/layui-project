@@ -1,0 +1,70 @@
+[
+	{
+		"name":"平台首页","code":"BANDAN","icon":"home","url":"hometoplatform/index.html"
+	},
+	{
+	"name":"拖车首页(未做)","code":"BANDAN","icon":"home","url":"hometotrailer/index.html"
+	},
+{
+	"name":"企业认证","code":"CDRZ","icon":"auz","url":"certification/index.html"
+},
+{
+	"name":"办单管理","code":"BANDAN","icon":"user",
+	"children":[
+		{"name":"办单申请","code":"BANDAN-SHENQING","url":"singleApplication/index.html"},
+		{"name":"办单管理","code":"BANDAN-GUANLI","url":"singleAdmin/index.html"}
+	]
+},
+{
+	"name":"行程管理","code":"XINGCHENG","icon":"app",
+	"children":[
+		{"name":"行程调度","code":"XINGCHENG-DISPATCH","url":"scheduleAdmin/index.html"},
+		{"name":"行程预警(未做)","code":"XINGCHENG-DISPATCH","url":"scheduleWarningAdmin/index.html"}
+	]
+},
+{
+	"name":"交易统计","code":"COSTCOUNT","icon":"senior",
+	"children":[
+		{"name":"交易统计","code":"COSTCOUNT-COST","url":"transactionAdmin/index.html"}
+	]
+},
+{
+	"name":"统计报表","code":"WARNING","icon":"component",
+	"children":[
+		{"name":"办单量统计报表(未做)","code":"WARNING-TASKWARNING","url":"singleReportsAdmin/index.html"},
+		{"name":"服务费统计报表(未做)","code":"WARNING-POSITIONSETTING","url":"serviceFeeAdmin/index.html"}
+	]
+},
+{
+	"name":"基础维护","code":"BASE","icon":"template",
+	"children":[
+		{"name":"车队管理","code":"BASE-CARTEAM","url":"carteamAdmin/index.html"},
+		{"name":"船公司管理","code":"BASE-SHIPCOMPANY","url":"shipAdmin/index.html"},
+		{"name":"港口管理","code":"BASE-HARBOR","url":"harborAdmin/index.html"},
+		{"name":"码头管理","code":"BASE-DOCK","url":"dockAdmin/index.html"},
+		{"name":"司机管理","code":"BASE-DRIVER","url":"driverAdmin/index.html"},
+		{"name":"拖车管理","code":"BASE-TRAILER","url":"trailerAdmin/index.html"},
+		{"name":"数据映射管理","code":"BASE-MAPPING","url":"datamappingAdmin/index.html"}
+		
+	]
+},
+{
+	"name":"预警管理","code":"WARNING","icon":"component",
+	"children":[
+		{"name":"办单任务预警(未做)","code":"WARNING-TASKWARNING","url":"taskwarning/index.html"},
+		{"name":"危险品定位设置","code":"WARNING-POSITIONSETTING","url":"dangerousGoodsPosition/index.html"},
+		{"name":"危险品跟踪预警","code":"WARNING-TRACKWARNING","url":"dangerousGoodsFollow/index.html"}
+	]
+},
+
+{
+	"name":"系统管理","code":"SYSTEM","icon":"set",
+	"children":[
+		{"name":"用户管理","code":"SYSTEM-USER","url":"userAdmin/index.html"},
+		{"name":"角色管理","code":"SYSTEM-ROLE","url":"roleAdmin/index.html"},
+		{"name":"权限管理","code":"SYSTEM-PERMISSION","url":"permissionAdmin/index.html"}
+	]
+}
+
+
+]

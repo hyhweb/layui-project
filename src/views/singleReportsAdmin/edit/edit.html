@@ -1,0 +1,100 @@
+<div style="padding:10px;">
+    <form class="layui-form edit" action="">
+        <!-- 基本信息 -->
+        <div class="layui-tab layui-tab-brief">
+            <ul class="layui-tab-title">
+                <li class="layui-this">交易详情</li>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    <div class="layui-row">
+                        <div class="layui-col-xs4">
+                            <div class="layui-form-item" style="margin-bottom:0;">
+                                <label class="layui-form-label">交易单号：</label>
+                                <div class="layui-input-block">
+                                    <label class="layui-form-item-text" type="label" name="transactionNo"></label>
+                                </div>
+                            </div>
+                            <div class="layui-form-item" style="margin-bottom:0;">
+                                <label class="layui-form-label">交易类别：</label>
+                                <div class="layui-input-block">
+                                    <label class="layui-form-item-text" type="label" name="transactionTypeName"></label>
+                                </div>
+                            </div>
+                            <div class="layui-form-item" style="margin-bottom:0;">
+                                <label class="layui-form-label">交易时间：</label>
+                                <div class="layui-input-block">
+                                    <label class="layui-form-item-text" type="label" name="createTimeText"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs8">
+                            <div class="layui-inline marr10 amount">
+                                <div class="border-circle">
+                                    <div>
+                                        <label class="c1 fw fs" type="label" name="amount"></label>
+                                    </div>
+                                    <div>总金额</div>
+                                </div>
+                            </div>
+
+                            <span class="marr10">→</span>
+                            <div class="layui-inline marr10">
+                                <div class="border-circle">
+                                    <div>
+                                        <label class="c1 fs">交易</label>
+                                        <label class="c1 fs" type="label" name="transactionStatusName"></label>
+                                    </div>
+                                    <div>交易状态</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="layui-bg-gray">
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">交易描述：</label>
+                        <div class="layui-input-inline">
+                            <label class="layui-form-item-text" type="label" name="remark"></label>
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">操作人：</label>
+                        <div class="layui-input-inline">
+                            <label class="layui-form-item-text" type="label" name="operaterName"></label>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div style="padding:10px; text-align:center;"><span class="layui-btn" data-type="exports">导出明细</span></div>
+                    <div>关联柜子</div>
+                    <table class="layui-hide" id="detailtable"></table>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<script type="text/html" id="costListtpl">
+{{# layui.each(d.costList,function(index,item) {   }}
+    {{# if(index ==0){ }}
+        <span class="marr10">=</span>
+    {{# }  }}
+
+    {{# if(index ==1){ }}
+        <span  class="marr10">+</span>
+    {{# }  }}
+    <div class="layui-inline marr10">
+        <div class="border-circle">
+            <div>
+                <label class="c1 fw fs" type="label" >{{item.amount}}</label>
+            </div>
+            <div>{{item.costTypeName}}</div>
+        </div>
+    </div>
+{{# } ) }}
+
+</script>
+<script type="text/javascript" src="../singleReportsAdmin/edit/index.js"></script>

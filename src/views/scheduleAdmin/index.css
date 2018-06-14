@@ -1,0 +1,9 @@
+.layui-table-view select.selectedriver[lay-ignore]{
+    border-width: 1px;
+    border-style: solid;
+    background-color: #fff;
+    border-radius: 2px;
+    border-color: #e6e6e6;
+    height: 28px;
+    line-height: 28px;
+}

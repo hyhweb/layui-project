@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>云办单管理系统</title>
+    <link rel="stylesheet" href="../../source/libs/layui/css/layui.css?rev=@@hash">
+    <link rel="stylesheet" href="../../source/themes/login.css?rev=@@hash">
+
+    <link rel="stylesheet" href="./../login/index.css?rev=@@hash">
+    <link rel="stylesheet" href="../../source/themes/login.css?rev=@@hash">
+    <link rel="stylesheet" href="../../source/themes/blue.css?rev=@@hash">
+</head>
+
+<body>
+
+    <div class="layadmin-user-login layadmin-user-display-show" id="LAY-user-login" >
+        <div class="layadmin-user-login-main register">
+            <div class="layadmin-user-login-box layadmin-user-login-header">
+                <h2>云办单管理系统</h2>
+            </div>
+            <div class="layadmin-user-login-box layadmin-user-login-body layui-form">
+                <div class="layui-form-item">
+                    <label class="layadmin-user-login-icon layui-icon layui-icon-username" for="LAY-user-login-nickname"></label>
+                    <input type="text" name="loginName" id="LAY-user-login-nickname"  lay-verify="required" placeholder="用户名" class="layui-input" autocomplete="off">
+                </div>
+                <div class="layui-form-item">
+                    <label class="layadmin-user-login-icon layui-icon layui-icon-password" for="LAY-user-login-password"></label>
+                    <input type="password" name="loginPwd" id="LAY-user-login-password" lay-verify="required" placeholder="6-16位密码，区分大小写" class="layui-input" autocomplete="off">
+                </div>
+                <div class="layui-form-item">
+                    <label class="layadmin-user-login-icon layui-icon layui-icon-password" for="LAY-user-login-repass"></label>
+                    <input type="password" name="repass" id="LAY-user-login-repass" lay-verify="required" placeholder="确认密码" class="layui-input" autocomplete="off">
+                </div>
+                <div class="layui-form-item">
+                    <label class="layadmin-user-login-icon layui-icon layui-icon-cellphone" for="LAY-user-login-cellphone"></label>
+                    <input type="text" name="phone" id="LAY-user-login-cellphone" lay-verify="phone" placeholder="11位手机号" class="layui-input" autocomplete="off">
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-row">
+                        <div >
+                            <label class="layadmin-user-login-icon layui-icon layui-icon-vercode" for="LAY-user-login-vercode"></label>
+                            <input type="text" name="code" id="LAY-user-login-vercode" lay-verify="required" placeholder="请输入验证码" class="layui-input" autocomplete="off">
+                        </div>
+                        <div  class="code">
+                            <div >
+                                <a id="getsmscode">获取验证码</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item login-btn">
+                    <button class="layui-btn layui-btn-fluid" lay-submit="" lay-filter="reg-submit">立即注册</button>
+                </div>
+                <div class="login-other"><a href="../login/index.html">使用已有账户登录</a></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="../../source/scriptes/plugins/md5.js?rev=@@hash"></script>
+<script src="../../source/libs/layui/layui.js?rev=@@hash"></script>
+<script src="../../source/scriptes/config.js?rev=@@hash"></script>
+<script type="text/javascript" src="./index.js?rev=@@hash"></script>
+
+</html>

@@ -1,0 +1,53 @@
+<!-- 拖车管理 -->
+
+    <form class="layui-form" action="">
+      <div class="layui-form-item">
+        <div class="layui-inline">
+          <label class="layui-form-label">车牌号：</label>
+          <div class="layui-input-inline">
+            <input type="text" name="plateNumber"  autocomplete="off" class="layui-input">
+          </div>
+        </div>
+        <div class="layui-inline">
+          <label class="layui-form-label">司机：</label>
+          <div class="layui-input-inline">
+             <select name="driverId"  autocomplete="off"  lay-search>
+               <option value="">请选择</option>
+              </select>
+          </div>
+        </div>
+
+        <div class="layui-inline">
+          <label class="layui-form-label">状态：</label>
+          <div class="layui-input-inline">
+              <select name="valid"   lay-search>
+             <option value="">请选择</option>
+             <option value="1">有效</option>
+             <option value="0">无效</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="layui-inline">
+          <label class="layui-form-label">拖车规格：</label>
+          <div class="layui-input-inline">
+             <select name="spec"  autocomplete="off"  lay-search>
+               <option value="">请选择</option>
+              </select>
+          </div>
+        </div>
+
+         <button class="layui-btn layui-inline" lay-submit="" lay-filter="search" data-type="reload">查询</button>
+          <button type="reset" class="layui-btn layui-btn-primary layui-inline">重置</button>
+      </div>
+      <hr class="layui-bg-gray">
+        <div class="layui-form-item">
+          <div>
+            <span class="layui-btn"  data-handle="1" data-type="openDialog">新增</span>
+            <span class="layui-btn"  data-handle="2" data-type="openDialog">编辑</span>
+          </div>
+        </div>
+     </form>
+      <table class="layui-hide" id="table"></table>
+
+<script src="../trailerAdmin/index.js"></script>

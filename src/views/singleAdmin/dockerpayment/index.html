@@ -1,0 +1,252 @@
+<style>
+.layui-form-label-width {
+    min-width: 100px;
+    padding-left: 0;
+}
+</style>
+</style>
+<div id="putlistbox" style="padding:20px;">
+</div>
+<script type="text/html" id="putlist">
+    <div class="print-box clearfixd" style=" margin-bottom: 100px;">
+        <!--提重令 -->
+        <div id="printbox1" class="fl" style="width:1200px;padding-right:20px;">
+            <div class="layui-row" id="print1">
+                <div class="layui-col-xs12" style="text-align:center;">
+                    <h3 style="padding-top:20px; padding-bottom:10px;">
+                {{d.shipCompanyName}}
+            </h3>
+                    <div class="bm1"></div>
+                    <div style="padding:10px">
+                        提重令
+                    </div>
+                    <div class="bm1"></div>
+                </div>
+                <div style="padding:20px 0;">
+                    <div class="layui-row">
+                        <div class="layui-col-xs4 layui-col-sm12 layui-col-md4">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">船名航次</label>
+                                <div class="layui-form-mid layui-word-aux">{{d.voyageName}}</div>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs4 layui-col-sm12 layui-col-md4">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">拖车公司</label>
+                                <div class="layui-form-mid layui-word-aux">{{d.applyCompanyName}}</div>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs4 layui-col-sm12 layui-col-md4">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">提单号</label>
+                                <div class="layui-form-mid layui-word-aux">{{d.bookSpaceNo}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-row">
+                        <div class="layui-col-xs4 layui-col-sm12 layui-col-md4">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">提箱地点</label>
+                                <div class="layui-form-mid layui-word-aux">{{d.takeDockName}}</div>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs4 layui-col-sm12 layui-col-md4">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">还箱地点</label>
+                                <div class="layui-form-mid layui-word-aux">{{d.returnDockName}}</div>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs4 layui-col-sm12 layui-col-md4">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">集装箱经营人</label>
+                                <div class="layui-form-mid layui-word-aux">{{d.containerOwner}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-row">
+                        <div class="layui-col-xs4 layui-col-sm12 layui-col-md4">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">作业类型</label>
+                                <div class="layui-form-mid layui-word-aux">{{d.taskType}}</div>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs4 layui-col-sm12 layui-col-md4">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">提箱截止时间</label>
+                                <div class="layui-form-mid layui-word-aux">{{d.freeExpiryTimeText}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>集装箱列表（箱量/箱型：{{d.contractDetailsList.length}}*{{d.contractDetailsList[0].containerTypeName}}）</div>
+                    <div>
+                        <table class="layui-table">
+                            <thead>
+                                <tr>
+                                    <th>箱号</th>
+                                    <th>封号</th>
+                                    <th>货名</th>
+                                    <th>箱型</th>
+                                    <th>合计费用</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{# layui.each(d.contractDetailsList, function(index, item){ }}
+                                <tr>
+                                    <td>
+                                        <div>
+                                            {{item.containerNo}}
+                                        </div>
+                                    </td>
+                                    <td>{{item.leadSealNo}}</td>
+                                    <td>{{item.dangerousGoodsType}}</td>
+                                    <td>{{item.containerTypeName}}</td>
+                                    {{# if(index == 0) { }}
+                                    <td {{='rowspan=' +d.contractDetailsList.length }}>
+                                        <span class="c1">
+                                ￥{{d.totalCost}}
+                            </span>
+                                    </td>
+                                    {{# } }}
+                                </tr>
+                                {{# }) }}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--放箱令 -->
+        <div id="printbox2" class="fl" style="width:1200px;">
+            <div class="layui-row" id="print2">
+                <div class="layui-col-xs12" style="text-align:center;">
+                    <h3 style="padding-top:20px; padding-bottom:10px;">
+                {{d.shipCompanyName}}
+            </h3>
+                    <div class="bm1"></div>
+                    <div style="padding:10px">
+                        放箱令
+                    </div>
+                    <div class="bm1"></div>
+                </div>
+                <div style="padding:20px 0;">
+                    <div class="layui-row">
+                        <div class="layui-col-xs4 layui-col-sm12 layui-col-md4">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">船名航次</label>
+                                <div class="layui-form-mid layui-word-aux">{{d.voyageName}}</div>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs4 layui-col-sm12 layui-col-md4">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">拖车公司</label>
+                                <div class="layui-form-mid layui-word-aux">{{d.applyCompanyName}}</div>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs4 layui-col-sm12 layui-col-md4">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">提单号</label>
+                                <div class="layui-form-mid layui-word-aux">{{d.voyageName}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-row">
+                        <div class="layui-col-xs4 layui-col-sm12 layui-col-md4">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">提箱地点</label>
+                                <div class="layui-form-mid layui-word-aux">{{d.takeDockName}}</div>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs4 layui-col-sm12 layui-col-md4">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">还箱地点</label>
+                                <div class="layui-form-mid layui-word-aux">{{d.returnDockName}}</div>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs4 layui-col-sm12 layui-col-md4">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">集装箱经营人</label>
+                                <div class="layui-form-mid layui-word-aux">{{d.containerOwner}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-row">
+                        <div class="layui-col-xs4 layui-col-sm12 layui-col-md4">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">作业类型</label>
+                                <div class="layui-form-mid layui-word-aux">{{d.voyageName}}</div>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs4 layui-col-sm12 layui-col-md4">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">提箱截止时间</label>
+                                <div class="layui-form-mid layui-word-aux">{{d.freeExpiryTime}}</div>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs4 layui-col-sm12 layui-col-md4">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">货名</label>
+                                <div class="layui-form-mid layui-word-aux">{{d.goodsName}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-row">
+                        <div class="layui-col-xs4 layui-col-sm12 layui-col-md4">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">目的港</label>
+                                <div class="layui-form-mid layui-word-aux">{{d.destinationHarborName}}</div>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs4 layui-col-sm12 layui-col-md4">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">卸货港</label>
+                                <div class="layui-form-mid layui-word-aux">{{d.loadingHarborName}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>集装箱列表（箱量/箱型：{{d.contractDetailsList.length}}*{{d.contractDetailsList[0].containerTypeName}}）</div>
+                    <div>
+                        <table class="layui-table">
+                            <colgroup>
+                                <col width="150">
+                                <col width="200">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>箱型</th>
+                                    <th>箱量</th>
+                                    <th>合计费用</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{d.contractDetailsList[0].containerTypeName}}</td>
+                                    <td>{{d.contractDetailsList.length}}</td>
+                                    <td class="c1">￥{{d.totalCost}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-row" style="position:fixed;width:100%;bottom: 20px;    background: #fff;
+    left: 0;">
+        <div>
+            <span style="padding-left:20px;">合计：<span class="c1">￥{{d.totalCost}}</span>
+        </div>
+        <div class="layui-col-xs12" style="text-align:center">
+            <div class="layui-form-item">
+                <div class="">
+                    <button class="layui-btn payment-btn" data-type="dockerpayment">结算</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/javascript" src="../singleAdmin/dockerpayment/index.js"></script>

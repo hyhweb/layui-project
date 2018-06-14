@@ -1,0 +1,85 @@
+<div>
+    <div class="layui-row total">
+        <div class="layui-col-md3">
+            <div class="layui-card" style="margin-right:10px;">
+                <div class="layui-card-header">总服务费收入</div>
+                <div class="layui-card-body">
+                    <label class="serviceCostTotal"></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-col-md3">
+            <div class="layui-card" style="margin-right:10px;">
+                <div class="layui-card-header">访问量</div>
+                <div class="layui-card-body">
+                    <label class="visitCount"></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-col-md3">
+            <div class="layui-card" style="margin-right:10px;">
+                <div class="layui-card-header">支付笔数</div>
+                <div class="layui-card-body">
+                   <label class="payCount"></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-col-md3">
+            <div class="layui-card">
+                <div class="layui-card-header">车队总量</div>
+                <div class="layui-card-body">
+                    <label class="carTeamCount"></label>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <div class="layui-row" style="margin-top:10px;">
+        <div style="position: absolute; right: 37px;z-index: 2; margin-top: 10px;margin-right: 16px;">
+            <span class="layui-btn-group" style="margin-right: 10px;">
+                <button class="layui-btn layui-btn-primary  layui-btn-radius" data-type="render" data-handle="0">今日</button>
+                <button class="layui-btn layui-btn-primary  layui-btn-radius"  data-type="render" data-handle="1">本周</button>
+                <button class="layui-btn layui-btn-primary  layui-btn-radius"  data-type="render" data-handle="2">本月</button>
+                <button class="layui-btn layui-btn-primary layui-btn-radius"   data-type="render" data-handle="3">全年</button>
+            </span>
+            <span style="display: inline-block;"><input type="text" placeholder="自定义日期" class="layui-input" id="date"></span>
+        </div>
+        <div class="layui-card">
+            <div class="layui-card-body">
+
+                <div class="layui-tab layui-tab-brief" lay-filter="echart">
+                    <ul class="layui-tab-title">
+                        <li lay-id="1" class="layui-this">服务费</li>
+                        <li lay-id="2" >访问量</li>
+                    </ul>
+                    <div class="layui-tab-content clearfixd">
+                        <div class="fl" id="container" style="height:400px;width: 79%"></div>
+                        <div class="fr" style="width:20%">
+                            <div class="layui-card">
+                                <div class="layui-card-header">车队服务费排名
+                                </div>
+                                <div class="layui-card-body">
+                                   <ul class="sort"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+<link rel="stylesheet" href="../hometoplatform/index.css">
+<script type="text/javascript" src="../../source/scriptes/plugins/echarts.simple.min.js"></script>
+<script type="text/javascript" src="../hometoplatform/index.js"></script>

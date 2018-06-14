@@ -1,0 +1,64 @@
+<!-- 任务预警 -->
+    <form class="layui-form" action="">
+      <div class="layui-form-item">
+        <div class="layui-inline">
+          <label class="layui-form-label">预警类别：</label>
+          <div class="layui-input-inline">
+            <input type="text" name="loginName"  autocomplete="off" class="layui-input">
+          </div>
+        </div>
+        <div class="layui-inline">
+          <label class="layui-form-label">预警等级：</label>
+          <div class="layui-input-inline">
+            <input type="text" name="realName"  autocomplete="off" class="layui-input">
+          </div>
+        </div>
+
+        <div class="layui-inline">
+          <label class="layui-form-label" >预警导入分类：</label>
+          <div class="layui-input-inline">
+             <select name="companyType"  autocomplete="off"  lay-search>
+               <option value="">请选择</option>
+               <option value="0">平台</option>
+               <option value="1">船公司</option>
+               <option value="2">码头</option>
+               <option value="3">拖车公司</option>
+              </select>
+          </div>
+        </div>
+        <div class="layui-inline">
+          <label class="layui-form-label">状态：</label>
+          <div class="layui-input-inline">
+              <select name="status"   lay-search>
+             <option value="">请选择</option>
+             <option value="1">有效</option>
+             <option value="0">无效</option>
+            </select>
+          </div>
+        </div>
+         <button class="layui-btn layui-inline" lay-submit="" lay-filter="search" data-type="reload">查询</button>
+          <button type="reset" class="layui-btn layui-btn-primary layui-inline">重置</button>
+      </div>
+      <hr class="layui-bg-gray">
+        <div class="layui-form-item">
+          <div>
+            <span class="layui-btn"  data-handle="0" data-type="openDialog">查看</span>
+          </div>
+        </div>
+     </form>
+      <table class="layui-hide" id="table"></table>
+
+<script type="text/html" id="toolbar">
+   <div>
+   <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">站内提醒</a>
+   
+   </div>
+   <div>
+     <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">短信通知</a>
+  
+   </div>
+   <div>
+      <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">紧急电话</a>
+   </div>
+</script>
+<script src="../taskwarning/index.js"></script>

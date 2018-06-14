@@ -1,0 +1,72 @@
+<!-- 拖车管理 -->
+
+    <form class="layui-form" action="">
+      <div class="layui-form-item">
+        <div class="layui-inline">
+          <label class="layui-form-label">订舱单号：</label>
+          <div class="layui-input-inline">
+            <input type="text" name="bookSpaceNo"  autocomplete="off" class="layui-input">
+          </div>
+        </div>
+
+        <div class="layui-inline">
+          <label class="layui-form-label">集装箱号：</label>
+          <div class="layui-input-inline">
+            <input type="text" name="containerNo"  autocomplete="off" class="layui-input">
+          </div>
+        </div>
+
+
+
+        <div class="layui-inline">
+          <label class="layui-form-label">货物名称：</label>
+         <div class="layui-input-inline">
+            <input type="text" name="dangerousGoodsName"  autocomplete="off" class="layui-input">
+          </div>
+        </div>
+
+        
+
+        <div class="layui-inline">
+          <label class="layui-form-label">司机：</label>
+         <div class="layui-input-inline">
+            <input type="text" name="driverName"  autocomplete="off" class="layui-input">
+          </div>
+        </div>
+        
+        <div class="layui-inline">
+          <label class="layui-form-label">车牌：</label>
+         <div class="layui-input-inline">
+            <input type="text" name="plateNumber"  autocomplete="off" class="layui-input">
+          </div>
+        </div>
+        
+
+        
+
+         <button class="layui-btn layui-inline" lay-submit="" lay-filter="search" data-type="reload">查询</button>
+          <button type="reset" class="layui-btn layui-btn-primary layui-inline">重置</button>
+      </div>
+      <hr class="layui-bg-gray">
+        <div class="layui-form-item">
+          <div>
+            <span class="layui-btn"  data-handle="0" data-type="openDialog">查看</span>
+          </div>
+        </div>
+     </form>
+      <table class="layui-hide" id="table"></table>
+
+
+<!-- 经度纬度 -->
+<script type="text/html" id="latitudetpl">
+<div style="line-height: normal;color:blue;">
+  <div>{{d.latitude}}</div>
+  <div>{{d.longitude}}</div>
+</div>
+</script>
+<!-- 司机/车牌 -->
+<script type="text/html" id="drivertpl">
+  <div>{{d.driverName}}/{{d.plateNumber}}</div>
+</script>
+
+<script src="../dangerousGoodsFollow/index.js"></script>

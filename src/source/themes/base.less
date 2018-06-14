@@ -1,0 +1,283 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.clearfixd {
+    &:after {
+        content: '';
+        clear: both;
+        display: block;
+        visiblity: hidden;
+        height: 0;
+    }
+}
+
+a {
+    cursor: pointer;
+}
+
+
+
+.border-circle {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #aaa;
+    border-radius: 100%;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bm1 {
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.c1 {
+    color: red;
+}
+.c2{
+    color:blue;
+}
+.c3{
+    color:#FA2626;
+}
+.fs {
+    font-size: 20px;
+}
+.fs1 {
+    font-size: 12px;
+}
+
+.fw {
+    font-weight: bold;
+}
+
+.fl {
+    float: left;
+}
+.fr{
+    float:right;
+}
+
+.pad10{
+    padding:10px;
+}
+.padr10 {
+    padding-right: 10px;
+}
+
+.mart10{
+    margin-top:10px;
+}
+.marr10 {
+    margin-right: 10px;
+}
+
+
+
+
+/* layui 样式重构 */
+
+.layui-body{
+    background-color: #F0F2F5; 
+}
+.layui-body-inner{
+    padding: 20px 20px 10px 20px;
+    background-color: #fff;
+}
+.layui-layout-admin .layui-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.layui-layout-admin .layui-header {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .05);
+}
+
+.layui-layout-admin .layui-header {
+    border-bottom: 1px solid #f6f6f6;
+    box-sizing: border-box;
+    background-color: #fff
+}
+
+.layui-layout-admin .layui-header a,
+.layui-layout-admin .layui-header a cite {
+    color: #333
+}
+
+.layui-layout-admin .layui-header a:hover {
+    color: #000
+}
+
+.layui-layout-admin .layui-side {
+    top: 0;
+    z-index: 1001;
+}
+
+.layui-side-menu .layui-nav {
+    margin-top: 60px;
+}
+
+.layui-side-menu .layui-nav .layui-nav-item .layui-nav-child a {
+    height: 40px;
+    line-height: 40px;
+    padding-left: 45px;
+    padding-right: 30px;
+}
+
+.layui-layout-admin .layui-logo {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1002;
+    height: 59px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-weight: 300;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #00284D;
+    color:#fff;
+    font-size: 20px;
+}
+
+.layui-nav-item cite {
+    padding-left: 10px;
+}
+
+
+.layadmin-side-shrink .layui-layout-admin .layui-logo {
+    width: 60px;
+    background-image: url(../images/logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.layadmin-side-shrink .layui-layout-admin .layui-logo span {
+    display: none
+}
+
+.layadmin-side-shrink .layui-side {
+    left: 0;
+    width: 60px
+}
+
+.layadmin-side-shrink .layadmin-pagetabs,
+.layadmin-side-shrink .layui-layout-admin .layui-body,
+.layadmin-side-shrink .layui-layout-admin .layui-footer,
+.layadmin-side-shrink .layui-layout-admin .layui-layout-left {
+    left: 60px
+}
+
+.layadmin-side-shrink .layui-side-menu .layui-nav {
+    position: static;
+    width: 60px
+}
+
+.layadmin-side-shrink .layui-side-menu .layui-nav-item {
+    position: static
+}
+
+.layadmin-side-shrink .layui-side-menu .layui-nav-item>a {
+    padding-right: 0
+}
+
+.layadmin-side-shrink .layui-side-menu .layui-nav-item cite,
+.layadmin-side-shrink .layui-side-menu .layui-nav>.layui-nav-item>.layui-nav-child,
+.layadmin-side-shrink .layui-side-menu .layui-nav>.layui-nav-item>a .layui-nav-more {
+    display: none;
+    padding: 8px 0;
+    width: 200px
+}
+
+.layadmin-side-shrink .layui-side-menu .layui-nav>.layui-nav-itemed>a {
+    background: rgba(0, 0, 0, .3)
+}
+
+.layadmin-side-spread-sm .layadmin-pagetabs,
+.layadmin-side-spread-sm .layui-layout-admin .layui-body,
+.layadmin-side-spread-sm .layui-layout-admin .layui-footer,
+.layadmin-side-spread-sm .layui-layout-admin .layui-layout-left {
+    left: 0;
+    transform: translate3d(220px, 0, 0);
+    -webkit-transform: translate3d(220px, 0, 0)
+}
+
+.layadmin-side-spread-sm .layui-layout-admin .layui-layout-right {
+    transform: translate3d(220px, 0, 0);
+    -webkit-transform: translate3d(220px, 0, 0)
+}
+
+.layadmin-side-spread-sm .layui-side {
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0)
+}
+
+.layadmin-side-spread-sm .layadmin-body-shade {
+    display: block
+}
+
+.layui-table-cell .layui-input,
+.layui-table-cell .layui-textarea,
+.layui-table-cell .layui-select {
+    height: 28px;
+    line-height: 28px;
+}
+
+.layui-table-cell {
+    height: auto;
+    overflow: visible;
+    white-space: normal;
+    padding: 0 8px;
+    word-wrap: break-word;
+    /*text-overflow:inherit;
+white-space:normal; */
+}
+
+.layui-form-item-text {
+    padding: 5px 0px;
+    font-weight: 400;
+    line-height: 20px;
+    float: left;
+    word-break: break-word;
+}
+
+.layui-form-item {
+    .layui-input-inline {
+        width: 212px;
+    }
+}
+.layui-form-label{
+        padding: 5px 5px 9px 0;
+        width:100px;
+}
+
+.layui-form-radio{
+        margin: 4px 10px 0 0;
+}
+.layui-form-mid{
+        padding: 4px 0 !important;
+}
+
+/**********************表格样式*****************/
+
+.layui-table{
+    th{
+    font-weight: bolder;
+    }
+}
+/**********************导航样式*****************/
+
+.layui-breadcrumb a:hover{
+    color:#1890FF!important
+}
+
+
+/**********************弹出框样式*****************/

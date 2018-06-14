@@ -1,0 +1,93 @@
+<div style="padding:10px;">
+    <form class="layui-form edit" action="">
+        <!-- 基本信息 -->
+        <div class="layui-tab layui-tab-brief">
+
+            <div class="layui-tab-content">
+                <div class="">
+                    <div class="layui-row">
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*用户姓名：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="realName" required lay-verify="required" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*手机号码：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="phone" required lay-verify="required|phone" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="layui-row">
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*登录账户：</label>
+                                <div class="layui-input-block">
+                                    <input  type="text" name="loginName" required lay-verify="required" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="layui-col-xs6 loginPwd">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">用户分类：</label>
+                                <div class="layui-input-block">
+                                    <label class="layui-form-item-text" type ="label" name="companyTypeName"></label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+
+
+                <div class="">
+                    <div class="layui-row">
+                        <div class="layui-col-xs6 ">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">公司名称：</label>
+                                <div class="layui-input-block">
+                                    <label class="layui-form-item-text"  type ="label" name="companyName"></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="layui-col-xs6 ">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">角色：</label>
+                                <div class="layui-input-block">
+                                    <label class="layui-form-item-text"  type ="label"  name="roleNames"></label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="layui-row">
+            <div class="layui-col-xs12" style="text-align:center">
+                <div class="layui-form-item">
+                    <div class="">
+                        <button class="layui-btn" lay-submit="" lay-filter="edit">修改</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="../userInfo/index.js"></script>

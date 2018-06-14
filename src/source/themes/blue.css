@@ -1,0 +1,74 @@
+/* 色调重构 */
+/**********************表单样式*****************/
+/* 按钮 */
+.layui-btn {
+  /* background-color: @bgc; */
+  height: 32px;
+  line-height: 32px;
+  border-radius: 4px;
+}
+.layui-btn.layui-btn-xs {
+  height: 22px;
+  line-height: 22px;
+  border-radius: 2px;
+}
+.layui-btn-group .layui-btn-primary:hover {
+  color: #1890FF;
+}
+.layui-form-select dl dd.layui-this {
+  background-color: #1890FF;
+}
+.layui-btn-primary:hover {
+  border-color: #1890FF;
+}
+.layui-form-checked[lay-skin="primary"] i {
+  border-color: #1890FF;
+  background-color: #1890FF;
+}
+.layui-form-checkbox[lay-skin="primary"]:hover i {
+  border-color: #1890FF;
+}
+.layui-form-radioed > i,
+.layui-form-radio > i:hover {
+  color: #1890FF;
+}
+.layui-input,
+.layui-textarea,
+.layui-select {
+  height: 32px;
+  line-height: 32px;
+  border-radius: 4px;
+}
+/**********************分页样式*****************/
+.layui-laypage a:hover {
+  color: #1890FF;
+}
+/**********************组件样式*****************/
+/* 上传组件 */
+.layui-upload-drag .layui-icon {
+  color: #1890FF;
+}
+/* 时间组件 */
+.layui-laydate .layui-this {
+  background-color: #1890FF !important;
+}
+/**********************选项卡样式*****************/
+.layui-tab {
+  margin: 0;
+}
+/**********************菜单，导航栏样式*****************/
+.layui-nav-bar,
+.layui-nav .layui-this:after,
+.layui-nav-tree .layui-nav-itemed:after {
+  background-color: #1890FF;
+}
+/**********************登录，注册样式*****************/
+.layadmin-user-login-box .code a {
+  color: #1890FF;
+}
+.login-other a {
+  color: #1890FF;
+}
+.layadmin-user-login-header h2 {
+  color: #1890FF;
+}

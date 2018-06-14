@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>云办单管理系统</title>
+	<link rel="stylesheet" href="../../source/libs/layui/css/layui.css?rev=@@hash">
+  <link rel="stylesheet" href="./index.css?rev=@@hash">
+  <link rel="stylesheet" href="../../source/themes/login.css?rev=@@hash">
+  <link rel="stylesheet" href="../../source/themes/blue.css?rev=@@hash">
+</head>
+<body>
+
+	<div class="layadmin-user-login layadmin-user-display-show" id="LAY-user-login">
+
+  <div class="layadmin-user-login-main">
+    <div class="layadmin-user-login-box layadmin-user-login-header">
+      <h2>云办单管理系统</h2>
+    </div>
+    <div class="layadmin-user-login-box layadmin-user-login-body layui-form">
+      <div class="layui-form-item">
+        <label class="layadmin-user-login-icon layui-icon layui-icon-username" for="LAY-user-login-username"></label>
+        <input type="text" name="phone" id="LAY-user-login-username" lay-verify="required" placeholder="请输入手机号码" class="layui-input" value="13800138003" autocomplete="off">
+      </div>
+      <div class="layui-form-item">
+        <label class="layadmin-user-login-icon layui-icon layui-icon-password" for="LAY-user-login-password"></label>
+        <input type="password" name="loginPwd" id="LAY-user-login-password" lay-verify="required" placeholder="密码" class="layui-input" value="123456" autocomplete="off">
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-row">
+          <div >
+            <label class="layadmin-user-login-icon layui-icon layui-icon-vercode" for="LAY-user-login-vercode"></label>
+            <input type="text" name="code" id="LAY-user-login-vercode" lay-verify="required" placeholder="请输入验证码" class="layui-input" value="123456" autocomplete="off">
+          </div>
+          <div class="code">
+            <div style="float:right">
+              		 <a  id="getsmscode">获取验证码</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layui-form-item login-btn">
+        <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="login-submit">登 入</button>
+      </div>
+      <div class="login-other" ><a lay-href="/user/forget" class="layadmin-user-jump-change layadmin-link" >忘记密码？</a><a href="../register/index.html" style="float:left;">注册用户</a></div>
+
+    </div>
+  </div>
+  
+
+  <img id="visit" src="" style="display: none" onerror=";">
+</div>
+
+</body>
+<script src="../../source/scriptes/plugins/base64.js?rev=@@hash"></script>
+<script src="../../source/scriptes/plugins/md5.js?rev=@@hash"></script>
+<script src="../../source/scriptes/plugins/crypto-js.js?rev=@@hash"></script>
+<script src="../../source/libs/layui/layui.js?rev=@@hash"></script>
+<script src="../../source/scriptes/config.js?rev=@@hash"></script>
+
+<script type="text/javascript" src="./index.js?rev=@@hash"></script>
+</html>
+
+
+

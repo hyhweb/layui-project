@@ -1,0 +1,59 @@
+<!-- 拖车管理 -->
+
+    <form class="layui-form" action="">
+      <div class="layui-form-item">
+        <div class="layui-inline">
+          <label class="layui-form-label">订舱单号：</label>
+          <div class="layui-input-inline">
+            <input type="text" name="bookSpaceNo"  autocomplete="off" class="layui-input">
+          </div>
+        </div>
+
+        <div class="layui-inline">
+          <label class="layui-form-label">业务类型：</label>
+          <div class="layui-input-inline">
+             <select name="orderType"  autocomplete="off"  lay-search>
+               <option value="">请选择</option>
+               <option value="0">出口</option>
+               <option value="1">进口</option>
+              </select>
+          </div>
+        </div>
+
+        
+
+        <div class="layui-inline">
+          <label class="layui-form-label">船公司：</label>
+          <div class="layui-input-inline">
+             <select name="shipCompanyId"  autocomplete="off"  lay-search>
+               <option value="">请选择</option>
+              </select>
+          </div>
+        </div>
+
+        <div class="layui-inline">
+          <label class="layui-form-label">状态：</label>
+          <div class="layui-input-inline">
+              <select name="status"   lay-search>
+             <option value="">请选择</option>
+             
+            </select>
+          </div>
+        </div>
+
+        
+
+         <button class="layui-btn layui-inline" lay-submit="" lay-filter="search" data-type="reload">查询</button>
+          <button type="reset" class="layui-btn layui-btn-primary layui-inline">重置</button>
+      </div>
+      <hr class="layui-bg-gray">
+        <div class="layui-form-item">
+          <div>
+            <span class="layui-btn"  data-handle="1" data-type="openDialog">新增</span>
+            <span class="layui-btn"  data-handle="2" data-type="openDialog">编辑</span>
+          </div>
+        </div>
+     </form>
+      <table class="layui-hide" id="table"></table>
+
+<script src="../singleApplication/index.js"></script>

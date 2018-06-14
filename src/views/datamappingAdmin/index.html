@@ -1,0 +1,63 @@
+<!-- 拖车管理 -->
+
+    <form class="layui-form" action="">
+      <div class="layui-form-item">
+        <div class="layui-inline">
+          <label class="layui-form-label">当前系统名称：</label>
+          <div class="layui-input-inline">
+            <input type="text" name="currentName"  autocomplete="off" class="layui-input">
+          </div>
+        </div>
+
+        <div class="layui-inline">
+          <label class="layui-form-label">原系统名称：</label>
+          <div class="layui-input-inline">
+            <input type="text" name="originalName"  autocomplete="off" class="layui-input">
+          </div>
+        </div>
+
+        <div class="layui-inline">
+            <label class="layui-form-label">数据类型：</label>
+            <div class="layui-input-inline">
+                <select name="mappingType"  autocomplete="off"  lay-search>
+                   <option value="">请选择</option>
+                   <option value="0">船公司</option>
+                   <option value="1">码头</option>
+                   <option value="2">港口</option>
+                   <option value="3">拖车公司</option>
+                  </select>
+            </div>
+        </div>
+
+        <div class="layui-inline">
+            <label class="layui-form-label">公司类型：</label>
+            <div class="layui-input-inline">
+                <select name="companyType"  autocomplete="off"  lay-search>
+                   <option value="">请选择</option>
+                    <option value="0">平台</option>
+                    <option value="1">船公司</option>
+                    <option value="2">码头</option>
+                    <option value="3">拖车公司</option>
+                  </select>
+            </div>
+        </div>
+  
+
+  
+
+         <button class="layui-btn layui-inline" lay-submit="" lay-filter="search" data-type="reload">查询</button>
+          <button type="reset" class="layui-btn layui-btn-primary layui-inline">重置</button>
+      </div>
+      <hr class="layui-bg-gray">
+        <div class="layui-form-item">
+          <div>
+            <span class="layui-btn"  data-handle="1" data-type="openDialog">新增</span>
+            <span class="layui-btn"  data-handle="2" data-type="openDialog">编辑</span>
+<!--             <span class="layui-btn"  data-handle="3" data-type="openDialog">删除</span> -->
+            <span class="layui-btn"  data-handle="0" data-type="openDialog">查看</span>
+          </div>
+        </div>
+     </form>
+      <table class="layui-hide" id="table"></table>
+
+<script src="../datamappingAdmin/index.js"></script>

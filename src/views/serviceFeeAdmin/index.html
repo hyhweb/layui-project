@@ -1,0 +1,62 @@
+<!-- 交易统计 -->
+<form class="layui-form" action="">
+    <div class="layui-form-item">
+        
+        <div class="layui-inline">
+            <label class="layui-form-label">拖车公司：</label>
+            <div class="layui-input-inline">
+                <select name="carteamId" autocomplete="off" lay-search>
+                    <option value="">请选择</option>
+ 
+                </select>
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">业务类型：</label>
+            <div class="layui-input-inline">
+                <select name="transactionStatus" lay-search>
+                    <option value="">请选择</option>
+                    <option value="1">成功</option>
+                    <option value="0">失败</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="layui-inline">
+            <label class="layui-form-label">办单年月：</label>
+            <div class="layui-input-inline">
+                <input type="text" name="createTime" id="createTime" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-inline">
+            <label class="layui-form-label">订舱单号：</label>
+            <div class="layui-input-inline">
+                <input type="text" name="createTime11" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-inline">
+            <label class="layui-form-label">办单状态：</label>
+            <div class="layui-input-inline">
+                <select name="transactionStatus" lay-search>
+                    <option value="">请选择</option>
+                    <option value="1">成功</option>
+                    <option value="0">失败</option>
+                </select>
+            </div>
+        </div>
+
+        <button class="layui-btn layui-inline" lay-submit="" lay-filter="search" data-type="reload">查询</button>
+        <button type="reset" class="layui-btn layui-btn-primary layui-inline">重置</button>
+    </div>
+    <hr class="layui-bg-gray">
+    <div class="layui-form-item">
+        <div>
+            <span class="layui-btn" data-handle="0" data-type="openDialog">查看</span>
+            <span class="layui-btn" data-handle="9" data-type="openDialog">导出</span>
+        </div>
+    </div>
+</form>
+<table class="layui-hide" id="table"></table>
+<script src="../serviceFeeAdmin/index.js"></script>

@@ -1,0 +1,285 @@
+<!-- 行程调度管理 -->
+
+<link rel="stylesheet" href="../scheduleAdmin/index.css">
+    <form class="layui-form" action="">
+      <div class="layui-form-item">
+        <div class="layui-inline">
+          <label class="layui-form-label">业务类型：</label>
+           <div class="layui-input-inline">
+             <select name="orderType"  autocomplete="off"  lay-search>
+               <option value="">请选择</option>
+               <option value="0">出口</option>
+               <option value="1">进口</option>
+              </select>
+          </div>
+        </div>
+        <div class="layui-inline">
+          <label class="layui-form-label">提柜码头：</label>
+          <div class="layui-input-inline">
+             <select name="takeDockId"  autocomplete="off"  lay-search>
+               <option value="">请选择</option>
+              </select>
+          </div>
+        </div>
+
+        <div class="layui-inline">
+          <label class="layui-form-label">状态：</label>
+          <div class="layui-input-inline">
+              <select name="scheduleStatus"   lay-search>
+             <option value="">请选择</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="layui-inline">
+          <label class="layui-form-label">订舱单号：</label>
+          <div class="layui-input-inline">
+            <input type="text" name="bookSpaceNo" autocomplete="off" class="layui-input">
+          </div>
+        </div>
+
+        <div class="layui-inline">
+          <label class="layui-form-label">集装箱号：</label>
+          <div class="layui-input-inline">
+            <input type="text" name="containerNo" autocomplete="off" class="layui-input">
+          </div>
+        </div>
+
+        
+
+         <button class="layui-btn layui-inline search" lay-submit="" lay-filter="search" data-type="reload">查询</button>
+          <button type="reset" class="layui-btn layui-btn-primary layui-inline">重置</button>
+      </div>
+      <hr class="layui-bg-gray">
+        <div class="layui-form-item">
+          <div>
+            <span class="layui-btn"  data-handle="" data-type="assignDriver">确定派车</span>
+            <span class="layui-btn"  data-handle="" data-type="cancelAssignDriver">取消派车</span>
+            <span class="layui-btn"  data-handle="" data-type="merge">双拖</span>
+            <span class="layui-btn"  data-handle="" data-type="cancelMerge">取消双拖</span>
+            <span class="layui-btn"  data-handle="" data-type="assignCarTeam">指派车队</span>
+            <span class="layui-btn"  data-handle="" data-type="cancelAssignCarTeam">取消指派车队</span>
+          </div>
+        </div>
+     </form>
+      <table class="layui-hide" id="table" lay-filter="table"></table>
+
+
+<script type="text/javascript">
+    var obj={},scheduleArr=[];
+    function inputChange(elem){
+      var $ = layui.jquery,
+      value = $(elem).val(),
+      name = $(elem).attr('name'),
+      data = JSON.parse($(elem).attr('data')),
+      arr = [],
+      scheduleId = data.scheduleId,
+      trailerId = data.trailerId,
+      driverId = data.driverId;
+      if(obj[scheduleId] == undefined){
+        obj[scheduleId] = {}
+      }
+      
+      obj[scheduleId].scheduleId =scheduleId;
+      obj[scheduleId].trailerId =trailerId;
+    
+      if(name =="trailerId"){
+          obj[scheduleId].trailerId = value;
+      }
+     if(name =="address"){
+      var taskId = $(elem).attr('taskId');
+      if(obj[scheduleId].taskListData == undefined){
+        obj[scheduleId].taskListData = {}
+      }
+      if(obj[scheduleId].taskListData[taskId] == undefined){
+        obj[scheduleId].taskListData[taskId] = {}
+      }
+      obj[scheduleId].taskListData[taskId].taskId = taskId;
+      obj[scheduleId].taskListData[taskId].address = value;
+     }
+     if(name =="remark"){
+      var taskId = $(elem).attr('taskId');
+      if(obj[scheduleId].taskListData == undefined){
+        obj[scheduleId].taskListData = {}
+      }
+      if(obj[scheduleId].taskListData[taskId] == undefined){
+        obj[scheduleId].taskListData[taskId] = {}
+      }
+      obj[scheduleId].taskListData[taskId].taskId = taskId;
+      obj[scheduleId].taskListData[taskId].remark = value;
+     }
+      
+      for(var key in obj){
+        var item = {};
+        for(var i in obj[key]){
+          if( i !="taskListData"){
+            item[i] = obj[key][i];
+          }
+            
+            item.taskList=[];
+
+            for(var j in obj[key].taskListData){
+              item.taskList.push(obj[key].taskListData[j])
+            }
+
+         }
+
+        
+         
+        arr.push(item)
+      }
+      
+      scheduleArr = arr;
+
+
+  
+
+
+
+
+    }
+</script>
+
+<!-- 订舱单号 -->
+<script type="text/html" id="bookSpaceNotpl">
+<ul>
+{{#  layui.each(d.taskList, function(index, item){ }}
+  <li>
+    <span>{{ item.bookSpaceNo }}</span>
+  </li>
+{{#  }); }}
+</ul>
+</script>
+
+<!-- 业务类型 -->
+<script type="text/html" id="orderTypetpl">
+<ul>
+{{#  layui.each(d.taskList, function(index, item){ }}
+  <li>
+    <span>{{ item.orderTypeName }}</span>
+  </li>
+{{#  }); }}
+</ul>
+</script>
+
+<!-- 集装箱号 -->
+<script type="text/html" id="applyContainerNotpl">
+<ul>
+{{#  layui.each(d.taskList, function(index, item){ }}
+  <li>
+    <span>{{ item.containerNo }}</span>
+  </li>
+{{#  }); }}
+</ul>
+</script>
+
+<!-- 集装箱型 -->
+<script type="text/html" id="containerTypetpl">
+<ul>
+{{#  layui.each(d.taskList, function(index, item){ }}
+  <li>
+    <span>{{ item.containerTypeName }}/1</span>
+  </li>
+{{#  }); }}
+</ul>
+</script>
+
+
+<!-- 封号 -->
+<script type="text/html" id="leadSealNotpl">
+<ul>
+{{#  layui.each(d.taskList, function(index, item){ }}
+  <li>
+    <span>{{ item.leadSealNo }}</span>
+  </li>
+{{#  }); }}
+</ul>
+</script>
+
+<!-- 提柜码头 -->
+<script type="text/html" id="takeDockNametpl">
+<ul>
+{{#  layui.each(d.taskList, function(index, item){ }}
+  <li>
+    <span>{{ item.takeDockName }}</span>
+  </li>
+{{#  }); }}
+</ul>
+</script>
+
+
+<!-- 状态 -->
+<script type="text/html" id="statustpl">
+<div>
+  {{ d.scheduleStatusName}}
+</div>
+</script>
+
+
+
+<!-- 司机 -->
+<script type="text/html" id="drivertpl">
+
+
+ {{# if(d.scheduleStatus <2){ }}
+ <!-- <div class="layui-form-select select-box"><div class="layui-select-title"> -->
+    <select class="selectedriver"  data='{{JSON.stringify(d)}}' trailerId="{{d.trailerId}}" scheduleId="{{d.scheduleId}}" onchange="inputChange(this)" name="trailerId"   lay-search lay-filter="trailerId" lay-ignore>
+   <option value="">请选择</option>
+  </select>
+ <!--  <i class="layui-edge"></i></div>
+ </div> -->
+ {{#   }else{ }}
+  <div>{{d.driverName}}/{{d.plateNumber}}</div>
+ {{# } }}
+
+  
+</script>
+
+
+<!-- 装卸货地址 -->
+<script type="text/html" id="addresstpl">
+    <ul>
+    {{#  layui.each(d.taskList, function(index, item){ }}
+    {{# if(d.scheduleStatus <2){ }}
+       <li style="margin:5px 0">
+       <input taskId="{{item.taskId}}" data='{{JSON.stringify(d)}}'  scheduleId="{{d.scheduleId}}" type="text" name="address" onkeyup="inputChange(this)"  lay-filter="address"  autocomplete="off" class="layui-input" value="{{item.address}}">
+      </li>
+    {{#   }else{ }}
+
+     <li style="margin:5px 0">
+       <div>{{item.address}}</div>
+      </li>
+
+    {{# } }}
+
+     
+    {{#  }); }}
+    </ul>
+
+    
+
+</script>
+
+<!-- 备注 -->
+<script type="text/html" id="remarktpl">
+ <ul>
+    {{#  layui.each(d.taskList, function(index, item){ }}
+    {{# if(d.scheduleStatus <2){ }}
+         <li>
+       <textarea  taskId="{{item.taskId}}" data='{{JSON.stringify(d)}}'  scheduleId="{{d.scheduleId}}" name="remark" onkeyup="inputChange(this)"  class="layui-textarea" style="min-height:24px;margin:5px 0;padding:0 10px;">{{item.remark==null?'':item.remark}}</textarea>
+      </li>
+      {{#   }else{ }}
+      <div>{{item.remark==null?'':item.remark}}</div>
+      {{# } }}
+
+     
+    {{#  }); }}
+    </ul>
+
+    
+</script>
+
+
+
+<script src="../scheduleAdmin/index.js"></script>
+

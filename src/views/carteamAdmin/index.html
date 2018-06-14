@@ -1,0 +1,44 @@
+<!-- 车队管理 -->
+
+
+    <form class="layui-form" action="">
+      <div class="layui-form-item">
+        <div class="layui-inline">
+          <label class="layui-form-label">公司名称：</label>
+          <div class="layui-input-inline">
+            <input type="text" name="carTeamName"  autocomplete="off" class="layui-input">
+          </div>
+        </div>
+        <div class="layui-inline">
+          <label class="layui-form-label" style="width:auto">提交认证日期：</label>
+          <div class="layui-input-inline" style="width:100px;">
+            <input type="text" name="startCreateTime" id="startCreateTime"  autocomplete="off" class="layui-input">
+            
+          </div>
+
+          <div class="layui-form-mid">-</div>
+          <div class="layui-input-inline" style="width:100px;">
+            
+            <input type="text" name="endCreateTime" id="endCreateTime"  autocomplete="off" class="layui-input">
+          </div>
+
+        </div>
+
+         <button class="layui-btn layui-inline" lay-submit="" lay-filter="search" data-type="reload">查询</button>
+          <button type="reset" class="layui-btn layui-btn-primary layui-inline">重置</button>
+      </div>
+      <hr class="layui-bg-gray">
+        <div class="layui-form-item">
+          <div>
+            <span class="layui-btn"  data-handle="1" data-type="openDialog">新增</span>
+            <span class="layui-btn"  data-handle="2" data-type="openDialog">编辑</span>
+            <span class="layui-btn"  data-handle="0" data-type="openDialog">查看</span>
+            <span class="layui-btn"  data-handle="3" data-type="openDialog">审核</span>
+          </div>
+        </div>
+     </form>
+      <table class="layui-hide" id="table"></table>
+
+
+
+<script src="../carteamAdmin/index.js"></script>

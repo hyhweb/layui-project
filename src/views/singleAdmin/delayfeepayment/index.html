@@ -1,0 +1,204 @@
+<div style="padding:10px;">
+    <form class="layui-form edit" action="">
+        <!-- 基本信息 -->
+        <div class="layui-tab layui-tab-brief">
+            <ul class="layui-tab-title">
+                <li class="layui-this">详情信息</li>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    <div class="layui-row">
+                        <div class="layui-col-xs3">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">订舱单号：</label>
+                                <div class="layui-input-block">
+                                    <span type="label" class="layui-form-mid layui-word-aux" name="voyageName"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs3">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">船公司：</label>
+                                <div class="layui-input-block">
+                                    <span type="label" class="layui-form-mid layui-word-aux" name="shipCompanyName"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs3">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">服务类型：</label>
+                                <div class="layui-input-block">
+                                    <span type="label" class="layui-form-mid layui-word-aux" name="taskType"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="layui-tab-item layui-show">
+                    <div class="layui-row">
+                        <div class="layui-col-xs3">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">提箱地点：</label>
+                                <div class="layui-input-block">
+                                    <span type="label" class="layui-form-mid layui-word-aux" name="takeDockName"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs3">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">还箱地点：</label>
+                                <div class="layui-input-block">
+                                    <span type="label" class="layui-form-mid layui-word-aux" name="returnDockName"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs3">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">发往地点：</label>
+                                <div class="layui-input-block">
+                                    <span type="label" class="layui-form-mid layui-word-aux" name="address"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="layui-col-xs3">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">免费使用期限：</label>
+                                <div class="layui-input-block">
+                                    <span type="label" class="layui-form-mid layui-word-aux" name="freeExpiryTimeText"></span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="layui-tab layui-tab-brief">
+            <ul class="layui-tab-title">
+                <li class="layui-this">集装箱列表</li>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                 <div id="view"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-tab layui-tab-brief">
+            <ul class="layui-tab-title">
+                <li class="layui-this">延期费用</li>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                 <div id="fee"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="layui-row">
+            <div class="layui-col-xs12" style="text-align:center;">
+                <div class="layui-form-item">
+                    <div class="">
+                        <button class="layui-btn" lay-submit="" lay-filter="edit">结算</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<script type="text/html"  id="containerList">
+    <table class="layui-table">
+                    <colgroup>
+                        <col width="150">
+                        <col width="200">
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            
+
+                            
+                            <th>箱号</th>
+                            <th>箱型</th>
+                            <th>封号</th>
+                            <th>提柜预约编号</th>
+                            <th>还柜预约编号</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    {{# layui.each(d.contractDetailsList, function(index, item){ }}
+                        <tr>
+                            
+                            <td>{{item.containerNo}}</td>
+                            <td>{{item.containerTypeName}}</td>
+                            <td>{{item.leadSealNo}}</td>
+                            <td>{{item.returnReservationNumber==null?'':item.returnReservationNumber}}</td>
+                            <td>{{item.takeReservationNumber==null?'':item.takeReservationNumber}}</td>
+                            
+                            
+                        </tr>
+                    {{# }) }}
+                        
+                    </tbody>
+                </table>
+</script>
+
+
+<script type="text/html" id="feetpl">
+<div class="layui-row">
+                        <div class="layui-col-xs4">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label" style="width:auto;">调整截止时间：</label>
+                                <div class="">
+                                    <span type="label" class="layui-form-mid layui-word-aux" >{{d.applyDate}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs4">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label" style="width:auto;">延期天数：</label>
+                                <div class="">
+                                    <span type="label" class="layui-form-mid layui-word-aux">{{d.dayNumber}}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{# if(d.orderStatus == 4){ }}
+                            <div class="layui-col-xs4">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label" style="width:auto;">船公司延期费(元)：</label>
+                                <div class="">
+                                    <span type="label" class="layui-form-mid" >
+                                        <span class="c1">{{d.delayCost==null?"":d.delayCost}}</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        {{# } else if(d.orderStatus == 6){ }}
+                        <div class="layui-col-xs4">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label" style="width:auto;">码头延期费(元)：</label>
+                                <div class="">
+                                    <span type="label" class="layui-form-mid"><span class="c1">{{d.delayCost==null?"":d.delayCost}}</span> </span>
+                                </div>
+                            </div>
+                        </div>
+                        {{# } }}
+                        
+
+                        
+
+
+                    </div> 
+   
+</script>
+
+<script type="text/javascript" src="../singleAdmin/delayfeepayment/index.js"></script>

@@ -1,0 +1,262 @@
+<style type="text/css">
+.layui-table td{ padding:8px; }
+ .layui-table tbody tr:hover{background-color: "#ffffff";}
+
+</style>
+<div style="text-align:center;"><div id="page1"></div></div>
+<div id="putlistbox" style="padding:20px;">
+</div>
+<script type="text/html" id="putlist">
+
+<div class="print-box" >
+	<!--提重令 -->
+	<div  >
+
+    <div class="layui-row" style="text-align:center;padding-bottom:20px;">
+        <div>
+            <button class="layui-btn print1" lay-submit="" style="width:150px">打印</button>
+        </div>
+    </div>
+
+    <div id="print1" >
+    <div class="layui-row" style="border-bottom:1px dashed #ccc;">
+        <div>
+           
+        <table class="layui-table" width="100%" style="margin:0;">
+            <tbody>
+           		 <tr style="text-align:center;">
+                    <td colspan="7" >{{d.shipCompanyName}}</td>
+                    <td rowspan="2" style="width:130px;">OUT 出场</td>
+                </tr>
+                <tr style="text-align:center;">
+                    <td colspan="7">集装箱设备交接单</td>
+                </tr>
+                <tr>
+                    <td style="width:80px;">提箱地点</td>
+                    <td colspan="3"  class="layui-word-aux" >名称：{{d.takeDockName}}</td>
+                    <td style="width:80px;">预约编号</td>
+                    <td colspan="3"  class="layui-word-aux" >{{d.currentContract.takeReservationNumber==null?"":d.currentContract.takeReservationNumber}}</td>
+                </tr>
+                <tr>
+                    <td>订舱单号</td>
+                    <td colspan="3"  class="layui-word-aux">{{d.bookSpaceNo}}</td>
+                    <td>装港</td>
+                    <td  class="layui-word-aux">{{d.unLoadingHarborName}}</td>
+                    <td style="width:120px;">卸港</td>
+                    <td  class="layui-word-aux">{{d.loadingHarborName}}</td>
+                </tr>
+                <tr>
+                    <td>船名航次</td>
+                    <td colspan="3" class="layui-word-aux">{{d.voyageName}}</td>
+                    <td>目的地</td>
+                    <td class="layui-word-aux">{{d.destinationHarborName}}</td>
+                    <td>免费用箱期限</td>
+                    <td class="layui-word-aux">{{d.freeExpiryTimeText}}</td>
+                </tr>
+                 <tr>
+                    <td>箱号</td>
+                    <td colspan="3" class="layui-word-aux">{{d.currentContract.containerNo}}</td>
+                    <td>箱型/尺寸</td>
+                    <td class="layui-word-aux">{{d.currentContract.containerTypeName}}</td>
+                    <td>铅封号</td>
+                    <td class="layui-word-aux">{{d.currentContract.leadSealNo}}</td>
+                </tr>
+                <tr>
+                    <td style="width:50px;">温度</td>
+                    <td class="layui-word-aux" style="width:50px;">{{d.currentContract.temperature==null?"":d.currentContract.temperature}}
+                    </td>
+                    <td  style="width:50px;">通风</td>
+                    <td class="layui-word-aux" style="width:50px;">
+                    {{d.currentContract.aeration==null?"":d.currentContract.aeration}}
+                    </td>
+                    <td >湿度</td>
+                    <td class="layui-word-aux" style="width:50px;">
+                    {{d.currentContract.humidity==null?"":d.currentContract.humidity}}
+                    </td>
+                    <td style="width:50px;">冷箱备注</td>
+                    <td class="layui-word-aux" style="width:50px;">
+                    {{d.currentContract.coldBoxRemark==null?"":d.currentContract.coldBoxRemark}}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>箱主</td>
+                    <td colspan="3" class="layui-word-aux">{{d.containerOwner==null?"":d.containerOwner}}</td>
+                    <td>出场目的状态</td>
+                    <td class="layui-word-aux">{{d.comeOutObjective}}</td>
+                    <td>进场记录</td>
+                    <td class="layui-form">  
+                    <div class="layui-form-item">
+                                <div class="">
+                                   {{# 
+                                   if(d.currentContract.entryRecord ==1){
+                                   }}
+                                    <input type="radio" name="entryRecord" value="1" title="正常" checked>
+                                    <input type="radio" name="entryRecord" value="0" title="异常">
+                                    {{# }else{ }}
+                                    <input type="radio" name="entryRecord" value="1" title="正常">
+                                    <input type="radio" name="entryRecord" value="0" title="异常" checked>
+                                    {{# } }}
+                                </div>
+                            </div> 
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>承运拖车公司</td>
+                    <td colspan="2" class="layui-word-aux">{{d.applyCompanyName}}</td>
+                    <td style="width:50px;">拖车车牌</td>
+                    <td class="layui-word-aux"></td>
+                    <td style="width:60px;">司机姓名/电话</td>
+                    <td colspan="2" class="layui-word-aux"></td>
+                </tr>
+                <tr>
+                    <td>备注</td>
+                    <td colspan="7" class="layui-word-aux">{{d.remark==null?"":d.remark}}</td>
+                </tr>
+                
+            </tbody>
+        </table>
+          <div class="layui-row">
+             <div class="layui-col-xs6 layui-col-sm12 layui-col-md6">
+                    <div class="">
+                        <label class="layui-form-label" style="width:auto;">用箱人/运箱人签署</label>
+                        <div class=" layui-word-aux"></div>
+                    </div>
+                </div>
+                <div class="layui-col-xs6 layui-col-sm12 layui-col-md6">
+                    <div class="">
+                        <label class="layui-form-label" style="width:auto;">码头/堆场值班员签署</label>
+                        <div class=" layui-word-aux"></div>
+                    </div>
+                </div>
+          </div>
+        </div>
+    </div>
+	
+	    <div class="layui-row" >
+        <div>
+           
+        <table class="layui-table" width="100%" >
+            <tbody>
+                 <tr style="text-align:center;">
+                    <td colspan="7" >{{d.shipCompanyName}}</td>
+                    <td rowspan="2" style="width:130px;">IN 进场</td>
+                </tr>
+                <tr style="text-align:center;">
+                    <td colspan="7">集装箱设备交接单</td>
+                </tr>
+                <tr>
+                    <td style="width:80px;">提箱地点</td>
+                    <td colspan="3"  class="layui-word-aux" >名称：{{d.takeDockName}}</td>
+                    <td style="width:80px;">预约编号</td>
+                    <td colspan="3"  class="layui-word-aux" >{{d.currentContract.returnReservationNumber==null?"":d.currentContract.returnReservationNumber}}</td>
+                </tr>
+                <tr>
+                    <td>订舱单号</td>
+                    <td colspan="3"  class="layui-word-aux">{{d.bookSpaceNo}}</td>
+                    <td>装港</td>
+                    <td  class="layui-word-aux">{{d.unLoadingHarborName}}</td>
+                    <td style="width:120px;">卸港</td>
+                    <td  class="layui-word-aux">{{d.loadingHarborName}}</td>
+                </tr>
+                <tr>
+                    <td>船名航次</td>
+                    <td colspan="3" class="layui-word-aux">{{d.voyageName}}</td>
+                    <td>目的地</td>
+                    <td class="layui-word-aux">{{d.destinationHarborName}}</td>
+                    <td>免费用箱期限</td>
+                    <td class="layui-word-aux">{{d.freeExpiryTimeText}}</td>
+                </tr>
+                 <tr>
+                    <td>箱号</td>
+                    <td colspan="3" class="layui-word-aux">{{d.currentContract.containerNo}}</td>
+                    <td>箱型/尺寸</td>
+                    <td class="layui-word-aux">{{d.currentContract.containerTypeName}}</td>
+                    <td>铅封号</td>
+                    <td class="layui-word-aux">{{d.currentContract.leadSealNo}}</td>
+                </tr>
+                <tr>
+                    <td style="width:50px;">温度</td>
+                    <td class="layui-word-aux" style="width:50px;">{{d.currentContract.temperature==null?"":d.currentContract.temperature}}
+                    </td>
+                    <td  style="width:50px;">通风</td>
+                    <td class="layui-word-aux" style="width:50px;">
+                    {{d.currentContract.aeration==null?"":d.currentContract.aeration}}
+                    </td>
+                    <td >湿度</td>
+                    <td class="layui-word-aux" style="width:50px;">
+                    {{d.currentContract.humidity==null?"":d.currentContract.humidity}}
+                    </td>
+                    <td style="width:50px;">冷箱备注</td>
+                    <td class="layui-word-aux" style="width:50px;">
+                    {{d.currentContract.coldBoxRemark==null?"":d.currentContract.coldBoxRemark}}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>箱主</td>
+                    <td colspan="3" class="layui-word-aux">{{(d.containerOwner ==null?'':d.containerOwner)}}</td>
+                    <td>进场目的状态</td>
+                    <td class="layui-word-aux">{{d.comeOutObjective}}</td>
+                    <td>进场记录</td>
+                    <td class="layui-form">  
+                    <div class="layui-form-item">
+                                <div class="">
+                                   {{# 
+                                   if(d.currentContract.entryRecord ==1){
+                                   }}
+                                    <input type="radio" name="entryRecord1" value="1" title="正常" checked>
+                                    <input type="radio" name="entryRecord1" value="0" title="异常">
+                                    {{# }else{ }}
+                                    <input type="radio" name="entryRecord1" value="1" title="正常">
+                                    <input type="radio" name="entryRecord1" value="0" title="异常" checked>
+                                    {{# } }}
+                                </div>
+                            </div> 
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>承运拖车公司</td>
+                    <td colspan="2" class="layui-word-aux">{{d.applyCompanyName}}</td>
+                    <td style="width:50px;">拖车车牌</td>
+                    <td class="layui-word-aux"></td>
+                    <td style="width:60px;">司机姓名/电话</td>
+                    <td colspan="2" class="layui-word-aux"></td>
+                </tr>
+                <tr>
+                    <td>备注</td>
+                    <td colspan="7" class="layui-word-aux">{{d.remark==null?"":d.remark}}</td>
+                </tr>
+                
+            </tbody>
+        </table>
+          <div class="layui-row">
+             <div class="layui-col-xs6 layui-col-sm12 layui-col-md6">
+                    <div class="">
+                        <label class="layui-form-label" style="width:auto;">用箱人/运箱人签署</label>
+                        <div class=" layui-word-aux"></div>
+                    </div>
+                </div>
+                <div class="layui-col-xs6 layui-col-sm12 layui-col-md6">
+                    <div class="">
+                        <label class="layui-form-label" style="width:auto;">码头/堆场值班员签署</label>
+                        <div class=" layui-word-aux"></div>
+                    </div>
+                </div>
+          </div>
+        </div>
+    </div>
+
+	</div>
+    </div>
+
+    
+
+
+
+
+</div>    
+</script>
+<script type="text/javascript" src="../singleAdmin/containerreceipt/index.js"></script>

@@ -1,0 +1,190 @@
+<div style="padding:10px;">
+    <form class="layui-form edit" action="">
+        <!-- 企业信息 -->
+        <div class="layui-tab layui-tab-brief">
+            <ul class="layui-tab-title">
+                <li class="layui-this">企业信息</li>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    <div class="layui-row">
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*公司名称：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="carTeamName" required lay-verify="required" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*公司地址：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="address" required lay-verify="required" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="">
+                    <div class="layui-row">
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*联系人：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="contacts" required lay-verify="required" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*联系方式：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="phone" required lay-verify="required|phone" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="layui-row">
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*企业邮箱：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="email" required lay-verify="required|email" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 企业资质 -->
+        <div class="layui-tab layui-tab-brief">
+            <ul class="layui-tab-title">
+                <li class="layui-this">企业资质</li>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    <div class="layui-row">
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*统一社会信用代码：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="creditCode" required lay-verify="required" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*上传合作协议：</label>
+                                <input type="hidden" name="cooperationAgreementImages" required lay-verify="fileRequired" >
+                                <div class="layui-input-block">
+                                    <div><button type="button" class="layui-btn" id="agreement"><i class="layui-icon"></i>上传文件</button></div>
+                                    <div name="cooperationAgreementImagesPrev" id="file-prev" type="fileprev"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="layui-row">
+                        <div class="layui-col-xs12">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*上传营业执照：</label>
+                                <input type="hidden" name="businessLicenseImages" required lay-verify="imageRequired" >
+                                <div class="layui-input-block" id="image-prev" name="businessLicenseImagesPrev" type="imageprev">
+
+                                    <div class="layui-upload-drag" id="business-license" style="padding: 20px;width: 100px;height: 100px;box-sizing: border-box;vertical-align: middle;">
+                                        <i class="layui-icon"></i>
+                                    </div>
+                                    
+                                 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 发票相关 -->
+        <div class="layui-tab layui-tab-brief">
+            <ul class="layui-tab-title">
+                <li class="layui-this">发票相关</li>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    <div class="layui-row">
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">单位名称：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="invoiceTitle" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">纳税人识别号：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="taxpayerNumber" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="layui-row">
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">单位地址：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="invoiceAddress" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">单位电话：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="invoiceTel" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="layui-row">
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">开户行名称：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="openingBank" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">开户行账户：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="bankAccount" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-row handle-btn">
+            <div class="layui-col-xs12" style="text-align:center">
+                <div class="layui-form-item">
+                    <button class="layui-btn" lay-submit="" lay-filter="edit">确定</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="../carteamAdmin/edit/index.js"></script>

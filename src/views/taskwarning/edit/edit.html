@@ -1,0 +1,155 @@
+<div style="padding:10px;">
+    <form class="layui-form edit" action="">
+        <!-- 基本信息 -->
+        <div class="layui-tab layui-tab-brief">
+            <ul class="layui-tab-title">
+                <li class="layui-this">用户信息</li>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="">
+                    <div class="layui-row">
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*用户姓名：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="realName" required lay-verify="required" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*手机号码：</label>
+                                <div class="layui-input-block">
+                                     <input type="text" name="phone" required lay-verify="required|phone" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="layui-row">
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*登录账户：</label>
+                                <div class="layui-input-block">
+                                    <input  type="text" name="loginName" required lay-verify="required" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="layui-col-xs6 loginPwd">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*密码：</label>
+                                <div class="layui-input-block">
+                                    <input  type="text" name="loginPwd" required lay-verify="required" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+
+                
+                <div class="">
+                    <div class="layui-row">
+                     <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*角色分类：</label>
+                                <div class="layui-input-block">
+                                    <select  xm-select="select" id="roleId" name="roleId"  autocomplete="off"  lay-search>
+                                       <option value="">请选择</option>
+                                      </select>
+                                </div>
+                            </div>
+                        </div> 
+
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*状态</label>
+                                <div class="layui-input-block">
+                                    <input type="radio" name="status" value="1" title="有效" checked>
+                                    <input type="radio" name="status" value="0" title="无效">
+                                </div>
+                            </div>
+                        </div>
+                         
+                    
+
+                    </div>
+                </div>
+                
+               
+
+                 <div class="">
+                    <div class="layui-row">
+
+                    <div class="layui-col-xs6 companyType">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*用户分类</label>
+                                <div class="layui-input-block">
+                                   <select lay-filter="companyType" name="companyType"  autocomplete="off"  lay-search>
+                                   <option value="">请选择</option>
+                                   <option value="0">平台</option>
+                                   <option value="1">船公司</option>
+                                   <option value="2">码头</option>
+                                   <option value="3">拖车公司</option>
+                                  </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs6 shipCompanyId">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*船公司</label>
+                                <div class="layui-input-block">
+                                   <select id="shipCompanyId" name="shipCompanyId"  autocomplete="off"  lay-search>
+                                       <option value="">请选择</option>
+                                      </select>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="layui-col-xs6 dockId">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*码头</label>
+                                <div class="layui-input-block">
+                                    <select id="dockId" name="dockId"  autocomplete="off"  lay-search>
+                                       <option value="">请选择</option>
+                                      </select>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="layui-col-xs6 trailerId">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*拖车公司</label>
+                                <div class="layui-input-block">
+                                    <select id="trailerId" name="trailerId"  autocomplete="off"  lay-search>
+                                       <option value="">请选择</option>
+                                      </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+        <div class="layui-row">
+            <div class="layui-col-xs12" style="text-align:center">
+                <div class="layui-form-item">
+                    <div class="">
+                        <button class="layui-btn" lay-submit="" lay-filter="edit">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="../../source/scriptes/plugins/md5.js"></script>
+<script type="text/javascript" src="../userAdmin/edit/index.js"></script>

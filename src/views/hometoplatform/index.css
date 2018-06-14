@@ -1,0 +1,19 @@
+.layui-body-inner{
+    background-color: initial;
+}
+.circle{
+    width: 15px;
+    height:15px;
+    border-radius: 100%;
+    overflow: hidden;
+    background-color: #333;
+    display: inline-block;
+    vertical-align: middle;
+}
+.circle.gray{
+    background-color: #c9c9c9;
+}
+.inline{
+    display: inline-block;
+    vertical-align: middle;
+}

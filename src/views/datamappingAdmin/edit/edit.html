@@ -1,0 +1,131 @@
+<div style="padding:10px;">
+    <form class="layui-form edit" action="">
+        <!-- 基本信息 -->
+        <div class="layui-tab layui-tab-brief">
+            <ul class="layui-tab-title">
+                <li class="layui-this">数据映射信息</li>
+            </ul>
+            <div class="layui-tab-content">
+
+
+
+                     <div class="layui-row">
+                    <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*原系统名称：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="originalName" required lay-verify="required" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                       <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*原系统ID：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="originalId" required lay-verify="required" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                     <div class="layui-row">
+
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*公司类型：</label>
+                                <div class="layui-input-block">
+                                    <select name="companyType" required lay-verify="required" autocomplete="off"  lay-search lay-filter="companyType">
+                                       <option value="">请选择</option>
+                                       <option value="0">平台</option>
+                                       <option value="1">船公司</option>
+                                       <option value="2">码头</option>
+                                       <option value="3">拖车公司</option>
+                                      </select>
+                                </div>
+                            </div>
+                        </div>
+
+                         <div class="layui-col-xs6">
+                             <div class="layui-form-item">
+                                 <label class="layui-form-label">公司名称：</label>
+                                 <div class="layui-input-block">
+                                     <select name="companyId" autocomplete="off"  lay-search lay-filter="companyId">
+                                         <option value="">请选择</option>
+                                     </select>
+                                 </div>
+                             </div>
+                         </div>
+
+                    </div>
+                <div class="layui-row">
+                    <div class="layui-col-xs6">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">*数据类型：</label>
+                            <div class="layui-input-block">
+                                <select name="mappingType" required lay-verify="required"  autocomplete="off"  lay-search lay-filter="mappingType">
+                                    <option value="">请选择</option>
+                                    <option value="1">船公司</option>
+                                    <option value="2">码头</option>
+                                    <option value="4">港口</option>
+                                    <option value="3">拖车公司</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="layui-col-xs6">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">当前系统公司：</label>
+                            <div class="layui-input-block">
+                                <select name="companyIds" autocomplete="off"  lay-search lay-filter="companyIds">
+                                    <option value="">请选择</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="layui-row">
+                    <div class="layui-col-xs6">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">*当前系统名称：</label>
+                            <div class="layui-input-block">
+                                <input readonly type="text" name="currentName" required lay-verify="required" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-xs6">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">*当前系统ID：</label>
+                            <div class="layui-input-block">
+                                <input readonly  type="text" name="currentId" required lay-verify="required" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+
+                
+ 
+
+
+
+
+            </div>
+        </div>
+        <div class="layui-row handle-btn">
+            <div class="layui-col-xs12" style="text-align:center">
+                <div class="layui-form-item">
+                    <div class="">
+                        <button class="layui-btn" lay-submit="" lay-filter="edit">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="../datamappingAdmin/edit/index.js"></script>

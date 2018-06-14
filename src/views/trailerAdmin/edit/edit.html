@@ -1,0 +1,110 @@
+<div style="padding:10px;">
+    <form class="layui-form edit" action="">
+        <!-- 基本信息 -->
+        <div class="layui-tab layui-tab-brief">
+            <ul class="layui-tab-title">
+                <li class="layui-this">拖车信息</li>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="">
+                    <div class="layui-row">
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*车牌号：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="plateNumber" required lay-verify="required" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*司机：</label>
+                                <div class="layui-input-block">
+                                    <select name="driverId" required lay-verify="required" autocomplete="off"  lay-search lay-filter="driverId">
+                                       <option value="">请选择</option>
+                                      </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="layui-row">
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*手机号码：</label>
+                                <div class="layui-input-block">
+                                    <input disabled type="text" name="phone" required lay-verify="required" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*拖车规格：</label>
+                                <div class="layui-input-block">
+                                    <select name="spec" required lay-verify="required" autocomplete="off"  lay-search>
+                                       <option value="">请选择</option>
+                                      </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="">
+                    <div class="layui-row">
+
+                    <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*载重(t)：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="trailerPayload" required lay-verify="required" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                       <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*马力(匹)：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="horsePower" required lay-verify="required" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="">
+                    <div class="layui-row">
+
+                    <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*状态</label>
+                                <div class="layui-input-block">
+                                    <input type="radio" name="valid" value="1" title="有效" checked>
+                                    <input type="radio" name="valid" value="0" title="无效">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+        <div class="layui-row">
+            <div class="layui-col-xs12" style="text-align:center">
+                <div class="layui-form-item">
+                    <div class="">
+                        <button class="layui-btn" lay-submit="" lay-filter="edit">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="../trailerAdmin/edit/index.js"></script>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>云办单平台</title>
+  <link rel="stylesheet" href="../../source/libs/layui/css/layui.css?rev=@@hash">
+  <link rel="stylesheet" href="../../source/themes/base.css?rev=@@hash">
+  <link rel="stylesheet" href="../../source/themes/blue.css?rev=@@hash">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+  <!--顶部栏占位-->
+  <div class="layui-header">
+<ul class="layui-nav layui-layout-left">
+      <li class="layui-nav-item layadmin-flexible" lay-unselect="">
+        <a href="javascript:;" lay-event="flexible" title="侧边伸缩">
+          <i class="layui-icon layui-icon-shrink-right" id="flexible"></i>
+        </a>
+      </li>
+      <li class="layui-nav-item layui-hide-xs" lay-unselect="">
+        <a href="javascript:;" target="_blank" title="面包屑">
+          <i class="layui-icon layui-icon-website" id="breadcrumb-toggle"></i>
+        </a>
+      </li>
+      </ul>
+
+
+
+
+    <ul class="layui-nav layui-layout-right" lay-filter="user-info">
+      <li class="layui-nav-item">
+        <a href="javascript:;">
+          <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+          <span class="loginName"></span>
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a id="userInfo">用户信息</a></dd>
+          <dd><a id="logout">退出</a></dd>
+        </dl>
+      </li>
+    </ul>
+  </div>
+ 
+
+  <!--侧边栏占位-->
+    <div class="layui-side layui-side-menu layui-bg-black">
+
+    <div class="layui-side-scroll nav">
+    <div class="layui-logo">
+    <span>
+    云办单管理系统
+    </span>
+    </div>
+    
+
+    </div>
+    </div>
+
+    
+  <div class="layui-body">
+  <div class="layui-card layadmin-header" id="breadcrumbbox" style="margin:0;padding:10px 15px;">
+    <span class="layui-breadcrumb" id="breadcrumb" lay-filter="breadcrumb">
+      
+    </span>
+  </div>
+    <!-- 内容主体区域 -->
+    <div style="padding: 15px;">
+    <div class="layui-body-inner">
+    
+    </div>
+    	
+    </div>
+  </div>
+  
+</div>
+<script src="../../source/scriptes/plugins/jquery-3.3.1.min.js?rev=@@hash"></script>
+<script src="../../source/scriptes/plugins/jQuery.print.js?rev=@@hash"></script>
+<script src="../../source/libs/layui/layui.js?rev=@@hash"></script>
+<script src="../../source/scriptes/config.js?rev=@@hash"></script>
+<script src="../../source/scriptes/base.js?rev=@@hash"></script>
+<script src="./index.js?rev=@@hash"></script>
+</body>
+</html>

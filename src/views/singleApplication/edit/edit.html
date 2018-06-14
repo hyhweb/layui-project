@@ -1,0 +1,101 @@
+<div style="padding:10px;">
+    <form class="layui-form edit" action="">
+        <!-- 基本信息 -->
+        <div class="layui-tab layui-tab-brief">
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    <div class="layui-row">
+
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*业务类型：</label>
+                                <div class="layui-input-block">
+                                    <select name="orderType"  required lay-verify="required" autocomplete="off"  lay-filter="orderType" lay-search>
+                                       <option value="">请选择</option>
+                                       <option value="0">出口</option>
+                                       <option value="1">进口</option>
+                                      </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*订舱单号：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="bookSpaceNo" required lay-verify="required" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="layui-tab-item layui-show">
+                    <div class="layui-row">
+                        
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*箱型：</label>
+                                <div class="layui-input-block">
+                                    <select name="containerType" required lay-verify="required" autocomplete="off"  lay-search>
+                                       <option value="">请选择</option>
+                                        <option value="0">20GP</option>
+                                        <option value="1">20HQ</option>
+                                        <option value="2">40GP</option>
+                                        <option value="3">40HQ</option>
+                                        <option value="4">其它</option>
+                                      </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="layui-col-xs6 containerNumber">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*箱量：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="containerNumber"  lay-verify="required" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                
+                
+
+                
+                <div class="layui-tab-item layui-show">
+                    <div class="layui-row">
+
+                    <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*船公司：</label>
+                                <div class="layui-input-block">
+                                    <select name="shipCompanyId" required lay-verify="required" autocomplete="off"  lay-search>
+                                       <option value="">请选择</option>
+                                      </select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+        <div class="layui-row">
+            <div class="layui-col-xs12" style="text-align:center">
+                <div class="layui-form-item">
+                    <div class="">
+                        <button class="layui-btn" lay-submit="" lay-filter="edit">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="../singleApplication/edit/index.js"></script>

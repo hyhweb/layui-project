@@ -1,0 +1,77 @@
+<div style="padding:10px;">
+    <form class="layui-form edit" action="">
+        <!-- 基本信息 -->
+        <div class="layui-tab layui-tab-brief">
+            <ul class="layui-tab-title">
+                <li class="layui-this">基本信息</li>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="">
+                    <div class="layui-row">
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*港口名称：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="harborName" required lay-verify="required" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*地址：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="address" required lay-verify="required" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="layui-row">
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*联系人：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="contacts" required lay-verify="required" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*联系电话：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="phone" required lay-verify="required|phone" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="">
+                    <div class="layui-row">
+                    
+                        <div class="layui-col-xs6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">*状态</label>
+                                <div class="layui-input-block">
+                                    <input type="radio" name="valid" value="1" title="有效" checked >
+                                    <input type="radio" name="valid" value="0" title="无效">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-row handle-btn">
+            <div class="layui-col-xs12" style="text-align:center">
+                <div class="layui-form-item">
+                    <button class="layui-btn" lay-submit="" lay-filter="edit">确定</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="../harborAdmin/edit/index.js"></script>
